@@ -85,8 +85,8 @@ const Portfolio = () => {
       tech: ['Ruby', 'Rake'],
       highlights: ['Infrastructure Code', 'Core Engine Utilities'],
       status: 'Infrastructure',
-      repo: 'https://github.com/OhMyTallest/kowm',
-      readme: 'https://github.com/OhMyTallest/kowm#readme',
+      repo: 'https://codeberg.org/kowm/kowm',
+      readme: 'https://codeberg.org/kowm/kowm#readme',
     },
   ];
 
