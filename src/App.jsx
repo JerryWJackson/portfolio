@@ -1,86 +1,100 @@
-import React from "react";
-import jerryAvatar from "./assets/jerry-avatar.png";
-import bridgeLogo from "./assets/bridge-logo.png";
-import brandLogo from "./assets/brand-logo.png";
+import React from 'react';
+import jerryAvatar from './assets/jerry-avatar.png';
+import bridgeLogo from './assets/bridge-logo.png';
+import brandLogo from './assets/brand-logo.png';
 
 const Portfolio = () => {
   const projects = [
     {
-      id: "seasonal-sips",
-      title: "Seasonal Sips",
-      org: "JerryWJackson",
+      id: 'seasonal-sips',
+      title: 'Seasonal Sips',
+      org: 'JerryWJackson',
       description:
-        "CI/CD stabilization and Google Maps integration for a seasonal drink discovery app.",
-      tech: ["React", "Vite", "Vitest", "GitHub Actions"],
+        'CI/CD stabilization and Google Maps integration for a seasonal drink discovery app.',
+      tech: ['React', 'Vite', 'Vitest', 'GitHub Actions'],
       highlights: [
-        "Automated Pipeline",
-        "Vitest 3.0.7 Stabilization",
-        "Google Maps API",
+        'Automated Pipeline',
+        'Vitest 3.0.7 Stabilization',
+        'Google Maps API',
       ],
-      status: "Live",
-      link: "http://JerryWJackson.github.io/tt-codejam_seasonal-sips",
+      status: 'Live',
+      link: 'http://JerryWJackson.github.io/seasonal-sips',
+      repo: 'https://github.com/JerryWJackson/seasonal-sips',
+      readme: 'https://github.com/JerryWJackson/seasonal-sips#readme',
     },
     {
-      id: "continuity-bridge",
-      title: "Continuity Bridge",
-      org: "continuity-bridge",
+      id: 'continuity-bridge',
+      title: 'Continuity Bridge',
+      org: 'continuity-bridge',
       description:
-        "A robust architectural pattern for maintainability and seamless system transitions.",
-      tech: ["Architecture", "Design Patterns"],
-      highlights: ["System Abstraction", "Integration Patterns"],
-      status: "Reference",
+        'A robust architectural pattern for maintainability and seamless system transitions.',
+      tech: ['Architecture', 'Design Patterns'],
+      highlights: ['System Abstraction', 'Integration Patterns'],
+      status: 'Reference',
+      link: 'https://continuity-bridge.github.io',
+      repo: 'https://github.com/continuity-bridge/continuity-bridge',
+      readme: 'https://github.com/continuity-bridge/continuity-bridge#readme',
     },
     {
-      id: "wtwr",
-      title: "WTWR (Full Stack)",
-      org: "JerryWJackson",
+      id: 'wtwr',
+      title: 'WTWR (Full Stack)',
+      org: 'JerryWJackson',
       description:
-        "A professional full-stack clothing discovery platform with backend and frontend consolidation.",
-      tech: ["Node.js", "Express", "React", "MongoDB"],
+        'A professional full-stack clothing discovery platform with backend and frontend consolidation.',
+      tech: ['Node.js', 'Express', 'React', 'MongoDB'],
       highlights: [
-        "Full Stack Integration",
-        "REST API Design",
-        "State Management",
+        'Full Stack Integration',
+        'REST API Design',
+        'State Management',
       ],
-      status: "Consolidated",
+      status: 'Consolidated',
+      repo: 'https://github.com/JerryWJackson/wtwr',
+      readme: 'https://github.com/JerryWJackson/wtwr#readme',
     },
     {
-      id: "wnwn",
-      title: "WNWN",
-      org: "JerryWJackson",
+      id: 'wnwn',
+      title: 'WNWN',
+      org: 'JerryWJackson',
       description:
         'A community-focused "Win-Win" platform for resource sharing and collaboration.',
-      tech: ["JavaScript", "HTML/CSS"],
-      highlights: ["Responsive UI", "Community Features"],
-      status: "Project Jam",
+      tech: ['JavaScript', 'HTML/CSS'],
+      highlights: ['Responsive UI', 'Community Features'],
+      status: 'Project Jam',
+      repo: 'https://github.com/JerryWJackson/wnwn',
+      readme: 'https://github.com/JerryWJackson/wnwn#readme',
     },
     {
-      id: "sanguihedral",
-      title: "Sanguihedral",
-      org: "UncleTallest",
+      id: 'sanguihedral',
+      title: 'Sanguihedral',
+      org: 'UncleTallest',
       description:
-        "A personal creative project highlighting technical precision and design.",
-      tech: ["JavaScript", "Vite"],
-      highlights: ["Custom Design System", "Vite Optimization"],
-      status: "Development",
+        'A personal creative project highlighting technical precision and design.',
+      tech: ['JavaScript', 'Vite'],
+      highlights: ['Custom Design System', 'Vite Optimization'],
+      status: 'Development',
+      link: 'https://uncletallest.github.io/sanguihedral',
+      repo: 'https://github.com/UncleTallest/sanguihedral',
+      readme: 'https://github.com/UncleTallest/sanguihedral#readme',
     },
     {
-      id: "kowm",
-      title: "koWM Core Suite",
-      org: "koWM",
+      id: 'kowm',
+      title: 'koWM Core Suite',
+      org: 'koWM',
       description:
-        "The core engine and utility suite for the OhMyTallest Productions ecosystem.",
-      tech: ["Ruby", "Rake"],
-      highlights: ["Infrastructure Code", "Core Engine Utilities"],
-      status: "Infrastructure",
+        'The core engine and utility suite for the OhMyTallest Productions ecosystem.',
+      tech: ['Ruby', 'Rake'],
+      highlights: ['Infrastructure Code', 'Core Engine Utilities'],
+      status: 'Infrastructure',
+      repo: 'https://github.com/OhMyTallest/kowm',
+      readme: 'https://github.com/OhMyTallest/kowm#readme',
     },
   ];
 
   const getOrgLogo = (org) => {
     switch (org) {
-      case "JerryWJackson":
+      case 'JerryWJackson':
         return jerryAvatar;
-      case "continuity-bridge":
+      case 'continuity-bridge':
         return bridgeLogo;
       default:
         return brandLogo; // UncleTallest and koWM use the brand logo
@@ -129,16 +143,37 @@ const Portfolio = () => {
                 ))}
               </ul>
 
-              {project.link && (
+              <div className="project-links">
+                {project.link && (
+                  <a
+                    href={project.link}
+                    className="project-link live-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Live Site ↗
+                  </a>
+                )}
+                {!project.link && (
+                  <div className="project-link live-link placeholder"></div>
+                )}
                 <a
-                  href={project.link}
-                  className="project-link"
+                  href={project.readme}
+                  className="project-link readme-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Live Site ↗
+                  View README ↗
                 </a>
-              )}
+                <a
+                  href={project.repo}
+                  className="project-link github-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on GitHub ↗
+                </a>
+              </div>
             </div>
           </div>
         ))}
